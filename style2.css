@@ -1,0 +1,78 @@
+html {
+  box-sizing: border-box;
+  font-family: "helvetica neue";
+  font-size: 20px;
+  font-weight: 200;
+}
+body {
+  background-image: url("https://images.unsplash.com/photo-1594667807190-da4535cee42b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 2500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  margin: 0;
+  padding: 0;
+}
+/* ******Form****** */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-form {
+  max-width: 400px;
+  margin: 50px auto;
+}
+input {
+  width: 100%;
+  padding: 20px;
+}
+input.number {
+  margin: 0;
+  text-align: center;
+  outline: 0;
+  border-radius: 10px;
+  border: 10px solid #39c0ff;
+  width: 120%;
+  position: relative;
+  top: 10px;
+  z-index: 2;
+  font-size: 40px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+.btn {
+  align-items: center;
+  border-radius: 10px;
+  border: 10px solid #39c0ff;
+  margin-top: 1rem;
+}
+.radio {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.radio-btn {
+  border: 10px solid #39c0ff;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+/* ******Output****** */
+
+.output {
+  width: 80%;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.outputItem {
+  background-color: white;
+  list-style: none;
+  margin: 0.25rem;
+  align-items: center;
+  width: 25%;
+  border-radius: 10px;
+  border: 10px solid #39c0ff;
+}
