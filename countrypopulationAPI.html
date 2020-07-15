@@ -10,33 +10,23 @@
     <form class="search-form">
       <!-- Numbet -->
       <input type="text" class="number" placeholder="1,000,000" />
-      <!-- Radio -->
-      <div class="radio">
-        <div class="radio-btn">
-        <label for="Asia">Asia</label>
-        <input type="radio"  id="asia" name="region" value="Asia">
-      </div>
-        <div class="radio-btn">
-        <label for="Africa">Africa</label>
-        <input type="radio" class="radio-btn" id="asia" name="region" value="Africa">
-      </div>
-        <div class="radio-btn">
-        <label for="Oceania">Oceania</label>
-        <input type="radio" class="radio-btn" id="oceania" name="region" value="Oceania">
-      </div>
-      <div class="radio-btn">
-        <label for="Americas">Americas</label>
-        <input type="radio" class="radio-btn" id="americas" name="region" value="Americas">
-      </div>
-      <div class="radio-btn">
-        <label for="Europe">Europe</label>
-        <input type="radio" class="radio-btn" id="europe" name="region" value="Europe">
-      </div>
-        </div>
+      <!-- Select -->
+      <div class="select-container">
+      Region: <select id ='region'>
+        <option value = "Asia">Asia</option>
+        <option value = "Africa">Africa</option>
+        <option value = "Europe">Europe</option>
+        <option value = "Oceania">Oceania</option>
+        <option value = "Americas">Americas</option>
+     </select>
+    </div>
+        <!-- ******Submit****** -->
       <input class="btn" type="submit" value="Find Population" />
       </div>
     </form>
+    <div class="output-contianer">
     <ul class="output"></ul>
+  </div>
     <script>
       const number = document.querySelector(".number");
       const btn = document.querySelector(".btn");
@@ -55,7 +45,8 @@
       function numFunc(e, num) {
         e.preventDefault();
         num = number.value;
-        let newArr = countries.filter((country) => country.population > num).map(namepop => `<li class="outputItem">${namepop.name}: ${numberWithCommas(namepop.population)}</li>`).join('');
+        let region = document.getElementById('region').value;
+        let newArr = countries.filter((country) => country.population > num && country.region === region).map(namepop => `<li class="outputItem">${namepop.name}: ${numberWithCommas(namepop.population)}</li>`).join('');
         output.innerHTML = newArr
       }
 
@@ -133,3 +124,26 @@ Asia -->
       Micronesia
       Australia and NewZealand
  -->
+
+ <!-- <div class="radio">
+  <div class="radio-btn">
+  <label for="Asia">Asia</label>
+  <input type="radio"  id="asia" name="region" value="Asia">
+</div>
+  <div class="radio-btn">
+  <label for="Africa">Africa</label>
+  <input type="radio" class="radio-btn" id="asia" name="region" value="Africa">
+</div>
+  <div class="radio-btn">
+  <label for="Oceania">Oceania</label>
+  <input type="radio" class="radio-btn" id="oceania" name="region" value="Oceania">
+</div>
+<div class="radio-btn">
+  <label for="Americas">Americas</label>
+  <input type="radio" class="radio-btn" id="americas" name="region" value="Americas">
+</div>
+<div class="radio-btn">
+  <label for="Europe">Europe</label>
+  <input type="radio" class="radio-btn" id="europe" name="region" value="Europe">
+</div>
+  </div> -->

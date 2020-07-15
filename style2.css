@@ -30,6 +30,7 @@ input {
 }
 input.number {
   margin: 0;
+  margin-bottom: 1rem;
   text-align: center;
   outline: 0;
   border-radius: 10px;
@@ -47,25 +48,32 @@ input.number {
   border: 10px solid #39c0ff;
   margin-top: 1rem;
 }
-.radio {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 0;
+select {
 }
-.radio-btn {
+.select-container {
+  margin-top: 1rem;
+  padding: 0.25rem;
   border: 10px solid #39c0ff;
+  background-color: white;
   border-radius: 5px;
   margin: 0.5rem;
 }
 /* ******Output****** */
-
+.output-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .output {
-  width: 80%;
+  width: 100%;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 .outputItem {
   background-color: white;
