@@ -7,6 +7,10 @@
     <title>Document</title>
   </head>
   <body>
+    <header>
+      <h1>Regional Population Finder</h1>
+      <p>Displays countries possesing a popuation larger thatn the given number in a given region.</p>
+    </header>
     <form class="search-form">
       <!-- Numbet -->
       <input type="text" class="number" placeholder="1,000,000" />
@@ -27,123 +31,11 @@
     <div class="output-contianer">
     <ul class="output"></ul>
   </div>
-    <script>
-      const number = document.querySelector(".number");
-      const btn = document.querySelector(".btn");
-      const output = document.querySelector(".output");
-      let num = "";
-      const url = "https://restcountries.eu/rest/v2/all";
-      let countries = [];
-
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => countries.push(...data))
-        .catch((error) => console.log(error));
-
-      btn.addEventListener("click", numFunc);
-
-      function numFunc(e, num) {
-        e.preventDefault();
-        num = number.value;
-        let region = document.getElementById('region').value;
-        let newArr = countries.filter((country) => country.population > num && country.region === region).map(namepop => `<li class="outputItem">${namepop.name}: ${numberWithCommas(namepop.population)}</li>`).join('');
-        output.innerHTML = newArr
-      }
-
-      function numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      }
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
-<!-- const btn = document.getElementById("btn");
-      const country = document.getElementById("country");
-      const searchInput = document.querySelector(".search");
-      const suggestions = document.querySelector(".suggestions");
-
-      searchInput.addEventListener("change", displayMatches);
-      searchInput.addEventListener("keyup", displayMatches);
-
-      const url = "https://restcountries.eu/rest/v2/all";
-      let countries = [];
-
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => output.push(...data))
-        .catch((error) => console.log(error));
-
-      function findPop(numberToMatch, countries) {
-        return countries.filter((place) => {
-          return place.population < numberToMatch;
-        });
-      }
-
-      function displayMatches() {
-        console.log(this.value);
-        const matchArray = findPop(this.value, countries);
-        const html = matchArray
-          .map((place) => {
-            return `<li>
-          <span class='name'>${place.name}</span>
-          <span class="population">${numberWithCommas(place.population)}</span>
-          </li>
-          `;
-          })
-          .join("");
-        suggestions.innerHTML = html;
-      } -->
-
-<!-- Africa 
-Europe 
-Oceania
-Americas
-Asia -->
 
 
 
 
-      <!-- Southern Asia
-      Northern Europe
-      Southern Europe
-      Western Europe
-      Northern Africa
-      Eastern Africa
-      Western Africa
-      Middle Africa
-      Southern Africa
-      Caribbean
-      North America
-      Central America
-      South America
-      Western Asia
-      Eastern Asia
-      South Asia
-      South-Eastern Asia
-      Polynesia
-      Melanesia
-      Micronesia
-      Australia and NewZealand
- -->
 
- <!-- <div class="radio">
-  <div class="radio-btn">
-  <label for="Asia">Asia</label>
-  <input type="radio"  id="asia" name="region" value="Asia">
-</div>
-  <div class="radio-btn">
-  <label for="Africa">Africa</label>
-  <input type="radio" class="radio-btn" id="asia" name="region" value="Africa">
-</div>
-  <div class="radio-btn">
-  <label for="Oceania">Oceania</label>
-  <input type="radio" class="radio-btn" id="oceania" name="region" value="Oceania">
-</div>
-<div class="radio-btn">
-  <label for="Americas">Americas</label>
-  <input type="radio" class="radio-btn" id="americas" name="region" value="Americas">
-</div>
-<div class="radio-btn">
-  <label for="Europe">Europe</label>
-  <input type="radio" class="radio-btn" id="europe" name="region" value="Europe">
-</div>
-  </div> -->

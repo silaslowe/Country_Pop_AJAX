@@ -4,16 +4,38 @@ html {
   font-size: 20px;
   font-weight: 200;
 }
-body {
-  background-image: url("https://images.unsplash.com/photo-1594667807190-da4535cee42b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"); /* The image used */
-  background-color: #cccccc; /* Used if the image is unavailable */
-  height: 2500px; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+body,
+html {
+  /* background-image: url("https://images.unsplash.com/photo-1594667807190-da4535cee42b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"); /* The image used */
+  /* background-color: #cccccc;
+  height: 2500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
   margin: 0;
   padding: 0;
+  background-color: #134176;
 }
+
+/* Typography */
+
+h1 {
+  margin: 0.5rem;
+  text-decoration: underline;
+}
+p {
+  padding-bottom: 0.5rem;
+  margin: 0;
+}
+
+/* ******Header**** */
+
+header {
+  margin: 0;
+  background-color: #076587;
+  text-align: center;
+}
+
 /* ******Form****** */
 form {
   display: flex;
@@ -34,7 +56,7 @@ input.number {
   text-align: center;
   outline: 0;
   border-radius: 10px;
-  border: 10px solid #39c0ff;
+  border: 10px solid #0c8e7f;
   width: 120%;
   position: relative;
   top: 10px;
@@ -45,7 +67,7 @@ input.number {
 .btn {
   align-items: center;
   border-radius: 10px;
-  border: 10px solid #39c0ff;
+  border: 10px solid#0c8e7f;
   margin-top: 1rem;
 }
 select {
@@ -53,7 +75,7 @@ select {
 .select-container {
   margin-top: 1rem;
   padding: 0.25rem;
-  border: 10px solid #39c0ff;
+  border: 10px solid #0c8e7f;
   background-color: white;
   border-radius: 5px;
   margin: 0.5rem;
@@ -82,5 +104,5 @@ select {
   align-items: center;
   width: 25%;
   border-radius: 10px;
-  border: 10px solid #39c0ff;
+  border: 10px solid #0c8e7f;
 }
