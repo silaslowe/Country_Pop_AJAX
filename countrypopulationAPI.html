@@ -9,11 +9,14 @@
   <body>
     <header>
       <h1>Regional Population Finder</h1>
-      <p>Displays countries possesing a popuation larger thatn the given number in a given region.</p>
+      <p>Displays countries possesing a popuation within the given range in a given region.</p>
     </header>
     <form class="search-form">
-      <!-- Numbet -->
-      <input type="text" class="number" placeholder="1,000,000" />
+      <!-- Numbers -->
+      <div class="numbers">
+      <input type="text" class="number number1" placeholder="Min" />
+      <input type="text" class="number number2" placeholder="Max" />
+    </div>
       <!-- Select -->
       <div class="select-container">
       Region: <select id ='region'>

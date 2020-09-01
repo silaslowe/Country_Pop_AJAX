@@ -6,12 +6,6 @@ html {
 }
 body,
 html {
-  /* background-image: url("https://images.unsplash.com/photo-1594667807190-da4535cee42b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"); /* The image used */
-  /* background-color: #cccccc;
-  height: 2500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
   margin: 0;
   padding: 0;
   background-color: #134176;
@@ -43,32 +37,47 @@ form {
   align-items: center;
 }
 .search-form {
-  max-width: 400px;
+  max-width: 700px;
   margin: 50px auto;
 }
 input {
   width: 100%;
   padding: 20px;
 }
+
+.numbers {
+  display: flex;
+  width: 100%;
+}
+
 input.number {
-  margin: 0;
+  margin: 0 1rem;
   margin-bottom: 1rem;
   text-align: center;
   outline: 0;
   border-radius: 10px;
   border: 10px solid #0c8e7f;
-  width: 120%;
   position: relative;
   top: 10px;
-  z-index: 2;
   font-size: 40px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+.errorbtn {
+  margin: 0 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  outline: 0;
+  border-radius: 10px;
+  border: 10px solid red;
+  position: relative;
+  top: 10px;
+  font-size: 40px;
 }
 .btn {
   align-items: center;
   border-radius: 10px;
   border: 10px solid#0c8e7f;
   margin-top: 1rem;
+  width: 50%;
 }
 select {
 }
