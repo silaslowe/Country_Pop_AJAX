@@ -1,5 +1,5 @@
-const number1 = document.querySelector(".number1");
-const number2 = document.querySelector(".number2");
+const min = document.querySelector(".min");
+const max = document.querySelector(".max");
 const btn = document.querySelector(".btn");
 const output = document.querySelector(".output");
 let num = "";
@@ -14,9 +14,9 @@ fetch(url)
 btn.addEventListener("click", calculation);
 
 function calculation(e) {
-  e.preventDefault();
-  num1 = number1.value;
-  num2 = number2.value;
+  // e.preventDefault();
+  num1 = min.value;
+  num2 = max.value;
   reset();
   errorCheck();
   parametersCheck();
@@ -38,25 +38,25 @@ function calculation(e) {
 // Error Check Functions
 
 function errorCheck() {
-  if (!number1.value && !number2.value) {
-    missingInput(number1);
-    missingInput(number2);
+  if (!min.value && !max.value) {
+    missingInput(min);
+    missingInput(max);
     return;
   }
-  if (!number1.value) {
-    missingInput(number1);
+  if (!min.value) {
+    missingInput(min);
     return;
   }
-  if (!number2.value) {
-    missingInput(number2);
+  if (!max.value) {
+    missingInput(max);
     return;
   }
 }
 
 function parametersCheck() {
   if (num1 > num2) {
-    missingInput(number1);
-    missingInput(number2);
+    missingInput(min);
+    missingInput(max);
   }
 }
 
@@ -70,10 +70,10 @@ function missingInput(numberInput) {
 // Resets the Green border
 
 function reset() {
-  number1.classList.remove("errorbtn");
-  number2.classList.remove("errorbtn");
-  number1.classList.add("number");
-  number2.classList.add("number");
+  min.classList.remove("errorbtn");
+  max.classList.remove("errorbtn");
+  min.classList.add("number");
+  max.classList.add("number");
 }
 
 // Adds commas to output Numbers
@@ -83,21 +83,21 @@ function numberWithCommas(x) {
 }
 
 // function errorCheck2() {
-//   if (!number1.value && !number2.value) {
-//     number1.classList.remove("number");
-//     number1.classList.add("errorbtn");
-//     number2.classList.remove("number");
-//     number2.classList.add("errorbtn");
+//   if (!min.value && !max.value) {
+//     min.classList.remove("number");
+//     min.classList.add("errorbtn");
+//     max.classList.remove("number");
+//     max.classList.add("errorbtn");
 //     return;
 //   }
-//   if (!number1.value) {
-//     number1.classList.remove("number");
-//     number1.classList.add("errorbtn");
+//   if (!min.value) {
+//     min.classList.remove("number");
+//     min.classList.add("errorbtn");
 //     return;
 //   }
-//   if (!number2.value) {
-//     number2.classList.remove("number");
-//     number2.classList.add("errorbtn");
+//   if (!max.value) {
+//     max.classList.remove("number");
+//     max.classList.add("errorbtn");
 //     return;
 //   }
 // }

@@ -108,10 +108,11 @@ select {
 }
 .outputItem {
   background-color: white;
+  padding-left: 0.25em;
   list-style: none;
   margin: 0.25rem;
   align-items: center;
   width: 25%;
   border-radius: 10px;
-  border: 10px solid #0c8e7f;
+  border: 5px solid #0c8e7f;
 }
