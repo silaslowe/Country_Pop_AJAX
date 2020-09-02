@@ -5,19 +5,24 @@ const output = document.querySelector(".output");
 let num = "";
 const url = "https://restcountries.eu/rest/v2/all";
 let countries = [];
+let numbers = document.querySelectorAll(".number");
+let countryCount = 0;
 
 fetch(url)
   .then((res) => res.json())
   .then((data) => countries.push(...data))
   .catch((error) => console.log(error));
 
+// Event Listeners
+
 btn.addEventListener("click", calculation);
 
+// Click Event Callback
+
 function calculation(e) {
-  // e.preventDefault();
+  e.preventDefault();
   num1 = min.value;
   num2 = max.value;
-  reset();
   errorCheck();
   parametersCheck();
 
@@ -29,29 +34,41 @@ function calculation(e) {
     )
     .map(
       (namepop) =>
-        `<li class="outputItem">${namepop.name}: ${numberWithCommas(namepop.population)}</li>`
+        `<li class="outputItem">${(countryCount += 1)}) ${namepop.name}: ${numberWithCommas(
+          namepop.population
+        )}</li>`
     )
     .join("");
   output.innerHTML = newArr;
 }
 
-// Error Check Functions
+numbers.forEach((num) => num.addEventListener("transitionend", removeError));
+// Transitonend Callback
+function removeError() {
+  this.classList.remove("errorMessage");
+}
+
+// Missing Input
 
 function errorCheck() {
   if (!min.value && !max.value) {
     missingInput(min);
     missingInput(max);
-    return;
   }
   if (!min.value) {
     missingInput(min);
-    return;
   }
   if (!max.value) {
     missingInput(max);
-    return;
   }
+  return;
 }
+
+function missingInput(numberInput) {
+  numberInput.classList.add("errorMessage");
+}
+
+// Min Larger Than Max Check
 
 function parametersCheck() {
   if (num1 > num2) {
@@ -60,44 +77,8 @@ function parametersCheck() {
   }
 }
 
-// Removes green boarder, adds red error border
-
-function missingInput(numberInput) {
-  numberInput.classList.remove("number");
-  numberInput.classList.add("errorbtn");
-}
-
-// Resets the Green border
-
-function reset() {
-  min.classList.remove("errorbtn");
-  max.classList.remove("errorbtn");
-  min.classList.add("number");
-  max.classList.add("number");
-}
-
-// Adds commas to output Numbers
+// Output Numbers with Commas Function
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
-// function errorCheck2() {
-//   if (!min.value && !max.value) {
-//     min.classList.remove("number");
-//     min.classList.add("errorbtn");
-//     max.classList.remove("number");
-//     max.classList.add("errorbtn");
-//     return;
-//   }
-//   if (!min.value) {
-//     min.classList.remove("number");
-//     min.classList.add("errorbtn");
-//     return;
-//   }
-//   if (!max.value) {
-//     max.classList.remove("number");
-//     max.classList.add("errorbtn");
-//     return;
-//   }
-// }

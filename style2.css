@@ -14,7 +14,7 @@ html {
 /* Typography */
 
 h1 {
-  margin: 0.5rem;
+  margin-bottom: 0.5rem;
   text-decoration: underline;
 }
 p {
@@ -50,7 +50,7 @@ input {
   width: 100%;
 }
 
-input.number {
+.number {
   margin: 0 1rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -60,18 +60,26 @@ input.number {
   position: relative;
   top: 10px;
   font-size: 40px;
+  transition: 300ms;
 }
-.errorbtn {
+.errorMessage {
+  border: 10px solid red;
+  transform: scale(1.1);
+}
+
+.inputReset {
   margin: 0 1rem;
   margin-bottom: 1rem;
   text-align: center;
   outline: 0;
   border-radius: 10px;
-  border: 10px solid red;
+  border: 10px solid #0c8e7f;
   position: relative;
   top: 10px;
   font-size: 40px;
+  transition-duration: 500ms;
 }
+
 .btn {
   align-items: center;
   border-radius: 10px;
