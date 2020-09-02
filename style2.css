@@ -9,13 +9,25 @@ html {
   margin: 0;
   padding: 0;
   background-color: #134176;
+  font-family: "Quattrocento", serif;
+}
+
+body {
+  background-image: url("mt.jpg"); /* The image used */
+  background-color: #cccccc;
+  height: 2000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Typography */
 
 h1 {
-  margin-bottom: 0.5rem;
   text-decoration: underline;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 4rem;
 }
 p {
   padding-bottom: 0.5rem;
@@ -26,8 +38,12 @@ p {
 
 header {
   margin: 0;
+  padding: 1.5rem;
   background-color: #076587;
   text-align: center;
+  -webkit-box-shadow: 0px 3px 13px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 13px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 13px -3px rgba(0, 0, 0, 0.75);
 }
 
 /* ******Form****** */
@@ -35,6 +51,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Oswald", sans-serif;
 }
 .search-form {
   max-width: 700px;
@@ -56,46 +73,38 @@ input {
   text-align: center;
   outline: 0;
   border-radius: 10px;
-  border: 10px solid #0c8e7f;
+  border: 2px solid black;
   position: relative;
   top: 10px;
   font-size: 40px;
-  transition: 300ms;
+  transition: 250ms;
 }
 .errorMessage {
   border: 10px solid red;
-  transform: scale(1.1);
-}
-
-.inputReset {
-  margin: 0 1rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  outline: 0;
-  border-radius: 10px;
-  border: 10px solid #0c8e7f;
-  position: relative;
-  top: 10px;
-  font-size: 40px;
-  transition-duration: 500ms;
+  transform: scale(1.05);
 }
 
 .btn {
   align-items: center;
   border-radius: 10px;
-  border: 10px solid#0c8e7f;
+  border: 2px solid black;
   margin-top: 1rem;
   width: 50%;
+  font-size: 2em;
 }
-select {
-}
+
 .select-container {
   margin-top: 1rem;
   padding: 0.25rem;
-  border: 10px solid #0c8e7f;
+  border: 2px solid black;
   background-color: white;
   border-radius: 5px;
   margin: 0.5rem;
+  display: flex;
+}
+
+.region-label {
+  padding: 0 5px 0 5px;
 }
 /* ******Output****** */
 .output-container {
@@ -122,5 +131,8 @@ select {
   align-items: center;
   width: 25%;
   border-radius: 10px;
-  border: 5px solid #0c8e7f;
+  border: 2px solid black;
+  height: 60px;
+  display: flex;
+  font-weight: 500;
 }

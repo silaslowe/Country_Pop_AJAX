@@ -21,6 +21,7 @@ btn.addEventListener("click", calculation);
 
 function calculation(e) {
   e.preventDefault();
+  countryCount = 0;
   num1 = min.value;
   num2 = max.value;
   errorCheck();
