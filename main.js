@@ -15,6 +15,8 @@ fetch(url)
 
 // Event Listeners
 
+// Add Commas
+
 btn.addEventListener("click", calculation);
 
 // Click Event Callback
@@ -22,8 +24,8 @@ btn.addEventListener("click", calculation);
 function calculation(e) {
   e.preventDefault();
   countryCount = 0;
-  num1 = min.value;
-  num2 = max.value;
+  num1 = parseFloat(min.value.replace(/,/g, ""));
+  num2 = parseFloat(max.value.replace(/,/g, ""));
   errorCheck();
   parametersCheck();
 
@@ -82,4 +84,11 @@ function parametersCheck() {
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+numbers.forEach((num) => num.addEventListener("keyup", addCommas));
+
+function addCommas() {
+  console.log(this.value);
+  this.value = this.value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

@@ -62,7 +62,7 @@ input {
   padding: 20px;
 }
 
-.numbers {
+.range {
   display: flex;
   width: 100%;
 }
