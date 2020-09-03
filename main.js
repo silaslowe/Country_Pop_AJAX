@@ -86,7 +86,7 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-numbers.forEach((num) => num.addEventListener("keyup", addCommas));
+numbers.forEach((num) => num.addEventListener("keydown", addCommas));
 
 function addCommas() {
   console.log(this.value);
