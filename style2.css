@@ -15,7 +15,7 @@ html {
 body {
   background-image: url("mt.jpg"); /* The image used */
   background-color: #cccccc;
-  height: 2000px;
+  height: 2200px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,13 +27,13 @@ h1 {
   text-decoration: underline;
   margin: 0;
   font-family: "Oswald", sans-serif;
-  font-size: 4rem;
+  font-size: 2rem;
   opacity: 1;
 }
 p {
   padding-bottom: 0.5rem;
   margin: 0;
-  opacity: 1;
+  font-size: 0.75rem;
 }
 
 /* ******Header**** */
@@ -48,6 +48,10 @@ header {
   box-shadow: 0px 3px 13px -3px rgba(0, 0, 0, 0.75);
 }
 
+.description {
+  visibility: hidden;
+  height: 0em;
+}
 /* ******Form****** */
 form {
   display: flex;
@@ -66,10 +70,14 @@ input {
 
 .range {
   display: flex;
+  flex-direction: column;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .number {
+  transition: 200ms;
   margin: 0 1rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -77,9 +85,15 @@ input {
   border: 2px solid black;
   position: relative;
   top: 10px;
-  font-size: 40px;
-  transition: 200ms;
+  font-size: 32px;
+  width: 65%;
+  height: 70%;
 }
+
+.region-label {
+  padding: 0 5px 0 5px;
+}
+
 .errorMessage {
   border: 10px solid red;
   transform: scale(1.05);
@@ -90,8 +104,9 @@ input {
   border-radius: 10px;
   border: 2px solid black;
   margin-top: 1rem;
-  width: 50%;
-  font-size: 2em;
+  width: 40%;
+  height: 60%;
+  font-size: 1em;
 }
 
 .select-container {
@@ -104,9 +119,6 @@ input {
   display: flex;
 }
 
-.region-label {
-  padding: 0 5px 0 5px;
-}
 /* ******Output****** */
 .output-container {
   width: 100%;
@@ -129,7 +141,7 @@ input {
   list-style: none;
   margin: 0.25rem;
   align-items: center;
-  width: 25%;
+  width: 80%;
   border-radius: 10px;
   background-color: white;
   border: 2px solid black;
@@ -137,3 +149,54 @@ input {
   display: flex;
   font-weight: 500;
 }
+
+/* Medium Screen */
+
+@media (min-width: 580px) {
+  .outputItem {
+    width: 40%;
+    padding: 0.25em;
+  }
+}
+
+/* Large Screen */
+
+@media (min-width: 990px) {
+  h1 {
+    font-size: 4rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .description {
+    visibility: visible;
+    height: 1em;
+  }
+  .range {
+    flex-direction: row;
+  }
+  .number {
+    width: 120%;
+    height: 100%;
+  }
+  .btn {
+    width: 40%;
+    height: 100%;
+    font-size: 2em;
+    padding: 0.25em;
+  }
+  .number {
+    font-size: 36px;
+    width: 80%;
+    height: 100%;
+  }
+
+  .outputItem {
+    width: 25%;
+    padding: 0 0 0 0.25em;
+  }
+}
+
+/* Clean up spacing */
+/* Fix background hieght */
+/* Button size at small window */
