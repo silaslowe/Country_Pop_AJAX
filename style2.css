@@ -94,6 +94,27 @@ input {
   padding: 0 5px 0 5px;
 }
 
+#output-format {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  justify-content: center;
+}
+.radio-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+}
+.radio {
+  width: 20%;
+  margin: auto 0;
+  display: flex;
+}
+
 .errorMessage {
   border: 10px solid red;
   transform: scale(1.05);
