@@ -98,6 +98,7 @@ input {
   display: flex;
   flex-direction: column;
   width: 30%;
+  padding: 0.5rem;
   background-color: white;
   border-radius: 10px;
   border: 2px solid black;
