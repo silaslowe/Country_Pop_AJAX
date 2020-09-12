@@ -24,9 +24,23 @@ btn.addEventListener("click", calculation);
 function calculation(e) {
   e.preventDefault();
   countryCount = 0;
+  errorCheck();
   num1 = parseFloat(min.value.replace(/,/g, ""));
   num2 = parseFloat(max.value.replace(/,/g, ""));
-  errorCheck();
+  // alphabetical();
+  // ascending();
+  descending();
+}
+
+numbers.forEach((num) => num.addEventListener("transitionend", removeError));
+// Transitonend Callback
+function removeError() {
+  this.classList.remove("errorMessage");
+}
+
+// Output functions
+
+function alphabetical() {
   parametersCheck();
 
   let region = document.getElementById("region").value;
@@ -45,10 +59,44 @@ function calculation(e) {
   output.innerHTML = newArr;
 }
 
-numbers.forEach((num) => num.addEventListener("transitionend", removeError));
-// Transitonend Callback
-function removeError() {
-  this.classList.remove("errorMessage");
+function ascending() {
+  parametersCheck();
+
+  let region = document.getElementById("region").value;
+  let newArr = countries
+    .filter(
+      (country) =>
+        country.population > num1 && country.population < num2 && country.region === region
+    )
+    .sort((a, b) => a.population - b.population)
+    .map(
+      (namepop) =>
+        `<li class="outputItem">${(countryCount += 1)}) ${namepop.name}: ${numberWithCommas(
+          namepop.population
+        )}</li>`
+    )
+    .join("");
+  output.innerHTML = newArr;
+}
+
+function descending() {
+  parametersCheck();
+
+  let region = document.getElementById("region").value;
+  let newArr = countries
+    .filter(
+      (country) =>
+        country.population > num1 && country.population < num2 && country.region === region
+    )
+    .sort((a, b) => b.population - a.population)
+    .map(
+      (namepop) =>
+        `<li class="outputItem">${(countryCount += 1)}) ${namepop.name}: ${numberWithCommas(
+          namepop.population
+        )}</li>`
+    )
+    .join("");
+  output.innerHTML = newArr;
 }
 
 // Missing Input
