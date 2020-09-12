@@ -48,12 +48,24 @@ function removeError() {
   this.classList.remove("errorMessage");
 }
 
+// Radio Button Selector
+
+function formatSelector() {
+  radio.forEach(function (selection) {
+    if (selection.checked) {
+      formatSelection = selection;
+      console.log(formatSelection);
+    }
+  });
+}
+
 // Output functions
 
 function alphabetical() {
   parametersCheck();
 
   let region = document.getElementById("region").value;
+
   let newArr = countries
     .filter(
       (country) =>
@@ -73,6 +85,7 @@ function ascending() {
   parametersCheck();
 
   let region = document.getElementById("region").value;
+
   let newArr = countries
     .filter(
       (country) =>
@@ -93,6 +106,7 @@ function descending() {
   parametersCheck();
 
   let region = document.getElementById("region").value;
+
   let newArr = countries
     .filter(
       (country) =>
@@ -149,13 +163,4 @@ numbers.forEach((num) => num.addEventListener("keyup", addCommas));
 function addCommas() {
   console.log(this.value);
   this.value = this.value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function formatSelector() {
-  radio.forEach(function (selection) {
-    if (selection.checked) {
-      formatSelection = selection;
-      console.log(formatSelection);
-    }
-  });
 }

@@ -97,7 +97,7 @@ input {
 #output-format {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 30%;
   background-color: white;
   border-radius: 10px;
   border: 2px solid black;
